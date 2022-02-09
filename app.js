@@ -1,17 +1,17 @@
-// fetch('https://s3-ap-southeast-1.amazonaws.com/he-public-data/kickstarterc27b67e.json')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
+const URL_API = 'https://s3-ap-southeast-1.amazonaws.com/he-public-data/kickstarterc27b67e.json'
+ 
+const HTMLresponse = document.querySelector("#table")
+const tr = document.createElement('tr')
 
-const url = 'https://s3-ap-southeast-1.amazonaws.com/he-public-data/kickstarterc27b67e.json'
-const table = document.querySelector("table")
-
-async function fillTable() {
-    const tableHead = table.querySelector("th")
-    const tableBody = table.querySelector("tr")
-    const response = await fetch(url)
-    const data = await response.json()
-
-    console.log(data)
-}
-
-fillTable(url, table)
+ fetch(URL_API)
+   .then(response => response.json())
+   .then((projects) => {
+        projects.forEach((project) => {
+            let elem = document.createElement('tr')
+            elem.appendChild(
+                document.createTextNode(`${project.location}`)
+            )
+            tr.appendChild(elem)
+        })
+        HTMLresponse.appendChild(tr)
+   });
