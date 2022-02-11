@@ -22,7 +22,6 @@ table {
 }
 
 th {
-  padding: 20px;
   background-color: #6e78e1;
   color: #fff;
   padding: 15px 28px;
@@ -30,6 +29,7 @@ th {
 
 tr {
   border-bottom: 1px solid rgb(228, 228, 228);
+  padding: 15px 10px;
 }
 
 tr:hover {
@@ -37,6 +37,6 @@ tr:hover {
   cursor: pointer;
 }
 
-table td {
+td {
   padding: 15px 10px;
 }
